@@ -5,8 +5,7 @@ services:
 before_install: 
   - docker build -t levistringer/docker-react -f Dockerfile.dev . 
 
-script: 
-  - script:
+script:
   - docker run -e CI=true levistringer/docker-react npm run test
 
 deploy:

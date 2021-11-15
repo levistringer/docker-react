@@ -1,0 +1,10 @@
+sudo: required 
+services: 
+  - docker 
+
+before_install: 
+  - docker build -t levistringer/docker-react -f Dockerfile.dev . 
+
+script: 
+  - script:
+  - docker run -e CI=true levistringer/docker-react npm run test
